@@ -1,0 +1,39 @@
+body{
+    background:#f4f6f9;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.navbar-brand{
+    font-size:24px;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+}
+
+.btn{
+    border-radius:8px;
+}
+
+table{
+    background:white;
+}
+
+img{
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+h1{
+    color:#a905c6;
+    font-weight:bold;
+}
+
+.lead{
+    color:#666;
+}

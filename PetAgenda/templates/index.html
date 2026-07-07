@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="text-center mt-5">
+
+    <img src="{{ url_for('static', filename='img/logo.png') }}"
+         alt="Logo PetPatinhas"
+         width="260"
+         class="mb-4">
+
+    <h1 class="display-5">Bem-vindo!</h1>
+
+    <p class="lead">
+        Sistema de Agendamento para Pet Shop
+    </p>
+
+    <div class="mt-5">
+
+        <a href="/cadastrar" class="btn btn-primary btn-lg me-3">
+            Novo Agendamento
+        </a>
+
+        <a href="/listar" class="btn btn-outline-primary btn-lg">
+            Ver Agendamentos
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
