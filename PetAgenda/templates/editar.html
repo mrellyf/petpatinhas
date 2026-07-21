@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h2 class="mb-4 text-center">Editar Agendamento</h2>
+
+        <form method="POST" action="/pets/atualizar/{{ agendamento[0] }}">
+
+            <div class="mb-3">
+                <label class="form-label">Tutor</label>
+                <input
+                    type="text"
+                    name="tutor"
+                    class="form-control"
+                    value="{{ agendamento[1] }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Pet</label>
+                <input
+                    type="text"
+                    name="pet"
+                    class="form-control"
+                    value="{{ agendamento[2] }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Serviço</label>
+                <select name="servico" class="form-control" required>
+
+                    {% for servico in servicos %}
+
+                    <option value="{{ servico[0] }}"
+                        {% if servico[0] == agendamento[3] %}selected{% endif %}>
+                        {{ servico[1] }}
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Data</label>
+                <input
+                    type="date"
+                    name="data"
+                    class="form-control"
+                    value="{{ agendamento[4] }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Hora</label>
+                <input
+                    type="time"
+                    name="hora"
+                    class="form-control"
+                    value="{{ agendamento[5] }}"
+                    required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Salvar Alterações
+            </button>
+
+            <a href="/" class="btn btn-secondary">
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

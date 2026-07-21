@@ -7,7 +7,6 @@
 <table class="table table-striped table-hover">
 
     <thead class="table-primary">
-
         <tr>
             <th>Tutor</th>
             <th>Pet</th>
@@ -16,32 +15,33 @@
             <th>Horário</th>
             <th>Ações</th>
         </tr>
-
     </thead>
 
     <tbody>
 
-        <tr>
+        {% for agendamento in agendamentos %}
 
-            <td>Ana</td>
-            <td>Thor</td>
-            <td>Banho</td>
-            <td>10/07/2026</td>
-            <td>14:00</td>
+        <tr>
+            <td>{{ agendamento[1] }}</td>
+            <td>{{ agendamento[2] }}</td>
+            <td>{{ agendamento[3] }}</td>
+            <td>{{ agendamento[4] }}</td>
+            <td>{{ agendamento[5] }}</td>
 
             <td>
+               <a href="/editar/{{ agendamento[0] }}" class="btn btn-warning btn-sm">
+    Editar
+</a>
 
-                <button class="btn btn-warning btn-sm">
-                    Editar
-                </button>
-
-                <button class="btn btn-danger btn-sm">
-                    Excluir
-                </button>
-
+<a href="/excluir/{{ agendamento[0] }}"
+   class="btn btn-danger btn-sm"
+   onclick="return confirm('Deseja realmente excluir este agendamento?')">
+    Excluir
+</a>
             </td>
-
         </tr>
+
+        {% endfor %}
 
     </tbody>
 

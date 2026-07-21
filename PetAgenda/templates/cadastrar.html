@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Novo Agendamento</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="container">
 
-<h1>Novo Agendamento</h1>
+    <h1>Novo Agendamento</h1>
 
-<form>
+    <form method="POST" action="/cadastrar">
 
-<input type="text" placeholder="Nome do Tutor"><br><br>
+        <input type="text" name="tutor" placeholder="Nome do Tutor" required>
 
-<input type="text" placeholder="Nome do Pet"><br><br>
+        <input type="text" name="pet" placeholder="Nome do Pet" required>
 
-<select>
-    <option>Banho</option>
-    <option>Tosa</option>
-    <option>Banho + Tosa</option>
-</select><br><br>
+        <select name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option value="1">Banho</option>
+            <option value="2">Tosa</option>
+            <option value="3">Banho + Tosa</option>
+        </select>
 
-<input type="date"><br><br>
+        <input type="date" name="data" required>
 
-<input type="time"><br><br>
+        <input type="time" name="hora" required>
 
-<button class="botao">Salvar</button>
+        <button type="submit">Salvar Agendamento</button>
 
-</form>
+    </form>
 
 </div>
 
